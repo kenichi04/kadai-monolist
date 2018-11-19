@@ -1,12 +1,12 @@
-<% if current_user.want?(item) %>
+<% if current_user.have?(item) %>
 
     <%= form_tag(ownership_path(item.id), method: :delete) do %>
   
       <%= hidden_field_tag :item_id, item.id %>
       
-      <%= hidden_field_tag :type, 'Want' %>
+      <%= hidden_field_tag :type, 'Have' %>
       
-      <%= submit_tag 'Unwant', class: 'btn btn-danger' %>
+      <%= submit_tag 'Unhave', class: 'btn btn-warning' %>
       
     <% end %>
     
@@ -16,9 +16,9 @@
     
       <%= hidden_field_tag :item_code, item.code %>
       
-      <%= hidden_field_tag :type, 'Want' %>
+      <%= hidden_field_tag :type, 'Have' %>
       
-      <%= submit_tag 'Want it', class: 'btn btn-primary' %>
+      <%= submit_tag 'have it', class: 'btn btn-success' %>
       
     <% end %>
     
